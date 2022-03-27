@@ -17,26 +17,20 @@ class _TextControlState extends State<TextControl> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _text = 'Second assignment text';
-                    });
-                  },
-                  child: const Text("Change Text")),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size.fromHeight(50),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
-          ],
-        ),
+            onPressed: () {
+              setState(() {
+                _text = 'Second assignment text';
+              });
+            },
+            child: const Text("Change Text")),
         const SizedBox(height: 16),
         TextResult(_text),
       ],
